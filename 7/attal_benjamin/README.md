@@ -2,9 +2,10 @@ PvWatts Widget
 ==============
 
 ## About
-  * [pvwatts] (http://pvwattsbeta.nrel.gov/)
   * pvwatts beta is an api provided by nrel for developers to access solar data
   * the api enables monthly cost analysis of setting up solar cells in a certain area given several parameters
+  * [pvwatts calculator] (http://pvwattsbeta.nrel.gov/)
+  * [pvwats reference] (http://developer.nrel.gov/)
 
 ## Purpose
   * The purpose is to provide Solaire (the company my dad works for) with a service to estimate the cost of setting up their solar cells
