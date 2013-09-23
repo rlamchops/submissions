@@ -17,3 +17,5 @@ PvWatts Widget
 
 ## Uses
   * Yui3, google geocoding api, pvwatts beta
+
+[PvWatts] (http://pvwattsbeta.nrel.gov/)
