@@ -77,8 +77,11 @@ YUI.add('pvwatts-widget', function(Y) {
     _handleJsonp: function(response) {
       if(response.errors.length === 0) {
         this.get('contentBox').addClass('invisible');
-        console.log(response);
       }
+
+      var form = document.getElementById('hidden-form');
+      form['json'].value = JSON.stringify(response);
+      form.submit();
     } 
 
   }, {
