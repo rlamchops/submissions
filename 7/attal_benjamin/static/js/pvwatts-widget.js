@@ -91,7 +91,7 @@ YUI.add('pvwatts-widget', function(Y) {
         value: 'http://developer.nrel.gov/api/pvwatts/v4.json'
       },
       apiKey: {
-        value: '6a1fa009180f6151ff6587fc63904374da7d36eb'
+        value: ''
       },
       fields: {
         value: []
