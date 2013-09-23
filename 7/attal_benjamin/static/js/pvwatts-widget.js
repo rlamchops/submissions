@@ -3,8 +3,8 @@ YUI.add('pvwatts-widget', function(Y) {
   var PvWatts = Y.namespace('Solaire.Widget').PvWatts = Y.Base.create('PvWatts', Y.Widget, [], {
 
     initializer: function() {
-      var fields = [{id:'system_size', text:'System Size'}, {id:'track_mode', text:'Tracking'}, 
-        {id:'derate', text:'DC-to-AC Derate Factor'}, {id:'tilt', text:'Tilt'}, {id:'azimuth', text:'Azimuth'}];
+      var fields = [{id:'lat', text:'Latitude'}, {id:'lon', text:'Longitude'}, {id:'system_size', text:'System Size'}, {id:'track_mode', text:'Tracking'}, 
+        {id:'derate', text:'DC-to-AC Derate Factor'}, {id:'tilt', text:'Tilt'}, {id:'azimuth', text:'Azimuth'}, {id:'api_key', text:'API Key'}];
       this.set('fields', fields);  
     },
 
@@ -41,7 +41,9 @@ YUI.add('pvwatts-widget', function(Y) {
         Y.Array.each(fields, function(field) {
           input.appendChild('<div class=label>' + field.text + '</div><input class=input id=' + field.id + ' type=text></br>');
         }, this);
-
+        
+        input.one('#lat').set('value', this.get('address').lat);
+        input.one('#lon').set('value', this.get('address').lon);
         cb.appendChild(input);
       }
 
@@ -62,10 +64,7 @@ YUI.add('pvwatts-widget', function(Y) {
 
     _onInputSubmit: function(e) {
       var children = this._input.all('input');
-      var lat = window.location.search.split('&')[0].split('?').join('');
-      var lon = window.location.search.split('&')[1];
-      var parameters = 'api_key=' + this.get('apiKey') + '&callback={callback}' 
-        + '&' + lat + '&' + lon + '&'; 
+      var parameters = 'callback={callback}&'; 
 
       children.each(function(child) {
         parameters += '&' + child.get('id') + '=' + child.get('value');
