@@ -2,6 +2,7 @@ PvWatts Widget
 ==============
 
 ## About
+  * [pvwatts] (http://pvwattsbeta.nrel.gov/)
   * pvwatts beta is an api provided by nrel for developers to access solar data
   * the api enables monthly cost analysis of setting up solar cells in a certain area given several parameters
 
@@ -18,4 +19,3 @@ PvWatts Widget
 ## Uses
   * Yui3, google geocoding api, pvwatts beta
 
-[PvWatts] (http://pvwattsbeta.nrel.gov/)
