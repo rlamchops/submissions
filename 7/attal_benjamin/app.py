@@ -16,5 +16,12 @@ def pvwatts():
   longitude = request.form['lon']
   return render_template('pvwatts.html',latitude=latitude,longitude=longitude)
 
+@app.route('/results.html', methods=['GET', 'POST'])
+def results():
+  if request.method == 'GET':
+    abort(404)
+  json = request.form['json']
+  return render_template('results.html', json=json)
+
 if __name__ == '__main__':
   app.run(debug=True)
