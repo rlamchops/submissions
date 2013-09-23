@@ -1,0 +1,13 @@
+<html>
+  <head>
+  	<script src="http://yui.yahooapis.com/3.11.0/build/yui/yui-min.js"></script>
+    <script src="../static/js/pvwatts-widget.js"></script>
+  	<script type="text/javascript">
+  		YUI().use('pvwatts-widget', function(Y) {
+  			watts = new Y.Solaire.Widget.PvWatts();
+  			watts.render();
+  			watts.focus();
+  		});
+  	</script>
+  </head>
+</html>

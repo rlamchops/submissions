@@ -1,0 +1,25 @@
+<html>
+  <head>
+  	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzakTdL2yDedKtpBoI3hAUzLNgQSbSvjk&sensor=false"></script>
+  	<script type="text/javascript">
+      setLocation = function() {
+        var geocoder = new google.maps.Geocoder();
+        var address = document.getElementsByClassName('address')[0].value;
+
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            var lat = results[0].geometry.location.lat();
+            var lon = results[0].geometry.location.lng();
+
+            window.location = window.location + 'pvwatts.html?lat=' + lat + '&lon=' + lon;
+          }
+        });
+      }
+  	</script>
+  </head>
+  <body>
+    <div class="label">Address:</div>
+    <input class="address" type="text">
+    <a href="javascript:setLocation();">GO</a>
+  </body>
+</html>
