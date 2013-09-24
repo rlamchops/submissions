@@ -1,6 +1,8 @@
 PvWatts Widget
 ==============
 
+by Benjamin Attal
+
 ## About
   * pvwatts beta is an api provided by nrel for developers to access solar data
   * the api enables monthly cost analysis of setting up solar cells in a certain area given several parameters
