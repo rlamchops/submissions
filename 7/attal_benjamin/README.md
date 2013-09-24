@@ -1,7 +1,7 @@
 PvWatts Widget
 ==============
 
-by Benjamin Attal
+** by Benjamin Attal **
 
 ## About
   * pvwatts beta is an api provided by nrel for developers to access solar data
