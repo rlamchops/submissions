@@ -1,0 +1,3 @@
+This python script is called by a bash script. It is used to find links to youtube videos
+of songs. It uses a some heuristics, but doesn't take advantage of an XML Parser which I found
+pretty confusing
