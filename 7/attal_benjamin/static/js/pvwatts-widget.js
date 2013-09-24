@@ -33,43 +33,35 @@ YUI.add('pvwatts-widget', function(Y) {
     _renderInputNode: function() {
       var cb = this.get('contentBox');
       var input = cb.one('.system-info');
-
       if(!input) {
         var fields = this.get('fields');
         input = Y.Node.create('<div class=system-info></div>');
-
         Y.Array.each(fields, function(field) {
           input.appendChild('<div class=label>' + field.text + '</div><input class=input id=' + field.id + ' type=text></br>');
         }, this);
-        
         input.one('#lat').set('value', this.get('address').lat);
         input.one('#lon').set('value', this.get('address').lon);
         cb.appendChild(input);
       }
-
       this._input = input;
     },
 
     _renderSubmitButton: function() {
       var cb = this.get('contentBox');
       var submit = cb.one('.submit-info');
-
       if(!submit) {
         submit = Y.Node.create('<input class=submit-info type=submit>');
         cb.appendChild(submit);
       }
-
       this._submit = submit;
     },
 
     _onInputSubmit: function(e) {
       var children = this._input.all('input');
       var parameters = 'callback={callback}&'; 
-
       children.each(function(child) {
         parameters += '&' + child.get('id') + '=' + child.get('value');
       }, this);
-
       var requestUri = this.get('uriBase') + '?' + parameters;
       Y.jsonp(requestUri, Y.bind(this._handleJsonp, this));
     },
@@ -78,7 +70,6 @@ YUI.add('pvwatts-widget', function(Y) {
       if(response.errors.length === 0) {
         this.get('contentBox').addClass('invisible');
       }
-
       var form = document.getElementById('hidden-form');
       form['json'].value = JSON.stringify(response);
       form.submit();
