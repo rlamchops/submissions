@@ -40,7 +40,7 @@ class WithCache(object):
     __metaclass__ = CacheMeta
     def fib(self, n):
         """Calculates the nth Fibonacci number efficiently."""
-        if n == 1 or n == 2:
+        if n <= 2:
             return 1
         return self.fib(n - 1) + self.fib(n - 2)
 
